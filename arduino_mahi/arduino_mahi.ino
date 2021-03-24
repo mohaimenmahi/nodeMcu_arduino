@@ -1,3 +1,5 @@
+/// Working code :D :D
+
 #include <SoftwareSerial.h>
 #include <SPI.h>
 #include <DMD2.h>
@@ -41,13 +43,13 @@ void loop() {
         return;
         }
 
-      int counter = root[0];
+      char* counter = root[0]["counter"];
+      char* queue = root[0]["queue"];
 
       char *Co = "C-";
-      char *Qu = "Q-";
       char next[10];
 
-      sprintf(next, " %s", counter);
+      sprintf(next, " %s%s\n%s", Co, counter, queue);
 
       char temp[10];
 

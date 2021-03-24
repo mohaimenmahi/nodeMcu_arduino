@@ -39,15 +39,12 @@ void loop()
 void handleBody() { //Handler for the body path
  
       if (server.hasArg("plain")== false){ //Check if body received
- 
             server.send(200, "text/plain", "Body not received");
             return;
  
       }
  
-      String message = "Body received:\n";
-             message += server.arg("plain");
-             message += "\n";
+      String message = server.arg("plain");
  
       server.send(200, "text/plain", message);
       Serial.println(message);
